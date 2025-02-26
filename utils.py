@@ -82,12 +82,3 @@ def replace_miner_id_in_toml(file_path, minerId):
 
     except Exception as e:
         print(f"An error occurred: {e}")
-
-# Example usage
-if __name__ == "__main__":
-    local_file_path = "./bosminerConfig/bosminer-default.toml"  # Replace with your local file path
-    remote_file_path = "/etc/bosminer.toml"  # Replace with your remote file path
-    hostname = "192.168.24.206"  # Replace with your remote host's IP or hostname
-    minerId = "s9b1"  # Replace with your miner ID
-
-    transfer_file_to_remote_host(local_file_path, remote_file_path, hostname, minerId)

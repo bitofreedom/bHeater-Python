@@ -170,11 +170,11 @@ def set_heater():
     # Determine the local file path based on the action and miner type
     miner_type = selected_heater.get("type", "default")  # Default to 'default' if type is not specified
     if action == "low":
-        local_file_path = f"bosminer-{miner_type}-low.toml"
+        local_file_path = f"bosminerConfig/bosminer-{miner_type}-low.toml"
     elif action == "medium":
-        local_file_path = f"bosminer-{miner_type}-medium.toml"
+        local_file_path = f"bosminerConfig/bosminer-{miner_type}-medium.toml"
     elif action == "high":
-        local_file_path = f"bosminer-{miner_type}-high.toml"
+        local_file_path = f"bosminerConfig/bosminer-{miner_type}-high.toml"
     else:
         return jsonify({"error": "Invalid action. Valid actions are 'low', 'medium', 'high'"}), 400
 
