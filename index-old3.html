@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control B-Heaters</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input,
+    select,
+    button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button.stop {
+      background-color: #f44336;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .heaters-list {
+      margin-top: 20px;
+    }
+
+    .heater-item {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      background-color: #f9f9f9;
+    }
+
+    .heater-item h3 {
+      margin: 0;
+    }
+
+    .heater-item p {
+      margin: 5px 0;
+    }
+
+    .actions {
+      margin-top: 20px;
+    }
+
+    .actions button {
+      width: auto;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Control B-Heaters</h1>
+
+    <!-- Heater Selection Dropdown -->
+    <label for="heaterSelect">Select Heater:</label>
+    <select id="heaterSelect" name="heaterSelect">
+      <option value="">-- Select a Heater --</option>
+    </select>
+
+    <!-- Action Dropdown -->
+    <label for="actionSelect">Select Action:</label>
+    <select id="actionSelect" name="actionSelect">
+      <option value="">-- Select an Action --</option>
+      <option value="high">High</option>
+      <option value="medium">Medium</option>
+      <option value="low">Low</option>
+    </select>
+
+    <!-- Start and Stop Buttons -->
+    <div class="actions">
+      <button id="startButton">Start</button>
+      <button id="stopButton" class="stop">Stop</button>
+    </div>
+
+    <!-- Result Display -->
+    <div id="result" class="result"></div>
+
+    <!-- Available Heaters List -->
+    <div class="heaters-list">
+      <h2>Available Heaters</h2>
+      <div id="heaters"></div>
+    </div>
+  </div>
+
+  <script>
+    // Fetch and display heaters
+    function fetchAndDisplayHeaters() {
+      fetch('/heaters')
+        .then(response => response.json())
+        .then(data => {
+          const heatersDiv = document.getElementById('heaters');
+          const heaterSelect = document.getElementById('heaterSelect');
+          heatersDiv.innerHTML = ''; // Clear previous content
+          heaterSelect.innerHTML = '<option value="">-- Select a Heater --</option>'; // Reset dropdown
+
+          if (data.error) {
+            heatersDiv.innerHTML = `<p class="error">${data.error}</p>`;
+            return;
+          }
+
+          data.forEach(heater => {
+            // Add heater to the dropdown
+            const option = document.createElement('option');
+            option.value = heater.ipAddress; // Use IP address as the value
+            option.textContent = `${heater.heaterName} (${heater.ipAddress})`;
+            heaterSelect.appendChild(option);
+
+            // Add heater to the list
+            const heaterItem = document.createElement('div');
+            heaterItem.className = 'heater-item';
+            heaterItem.innerHTML = `
+              <h3>${heater.heaterName}</h3>
+              <p><strong>Type:</strong> ${heater.type}</p>
+              <p><strong>IP Address:</strong> ${heater.ipAddress}</p>
+              <p><strong>Auth Type:</strong> ${heater.authType}</p>
+              <p><strong>Limit Power:</strong> ${heater.limitPower ? 'Yes' : 'No'}</p>
+            `;
+            heatersDiv.appendChild(heaterItem);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching heaters:', error);
+          document.getElementById('heaters').innerHTML = `<p class="error">Failed to load heaters. Please try again later.</p>`;
+        });
+    }
+
+    // Handle Start Button Click
+    document.getElementById('startButton').addEventListener('click', function () {
+      const heaterSelect = document.getElementById('heaterSelect');
+      const host = heaterSelect.value;
+
+      if (!host) {
+        alert('Please select a heater first.');
+        return;
+      }
+
+      fetch('/execute', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ host, command: 'start' }),
+      })
+        .then(response => response.json())
+        .then(data => {
+          const resultDiv = document.getElementById('result');
+          if (data.error) {
+            resultDiv.innerHTML = `<strong>Error:</strong> ${data.error}`;
+          } else {
+            resultDiv.innerHTML = `
+              <strong>Host:</strong> ${data.host}<br>
+              <strong>Command:</strong> ${data.command}<br>
+              <strong>Exit Code:</strong> ${data.exit_code}<br>
+              <strong>Output:</strong> ${data.output}<br>
+              <strong>Error:</strong> ${data.error}
+            `;
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          document.getElementById('result').innerHTML = `<strong>Error:</strong> ${error.message}`;
+        });
+    });
+
+    // Handle Stop Button Click
+    document.getElementById('stopButton').addEventListener('click', function () {
+      const heaterSelect = document.getElementById('heaterSelect');
+      const host = heaterSelect.value;
+
+      if (!host) {
+        alert('Please select a heater first.');
+        return;
+      }
+
+      fetch('/execute', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ host, command: 'stop' }),
+      })
+        .then(response => response.json())
+        .then(data => {
+          const resultDiv = document.getElementById('result');
+          if (data.error) {
+            resultDiv.innerHTML = `<strong>Error:</strong> ${data.error}`;
+          } else {
+            resultDiv.innerHTML = `
+              <strong>Host:</strong> ${data.host}<br>
+              <strong>Command:</strong> ${data.command}<br>
+              <strong>Exit Code:</strong> ${data.exit_code}<br>
+              <strong>Output:</strong> ${data.output}<br>
+              <strong>Error:</strong> ${data.error}
+            `;
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          document.getElementById('result').innerHTML = `<strong>Error:</strong> ${error.message}`;
+        });
+    });
+
+    // Fetch heaters when the page loads
+    fetchAndDisplayHeaters();
+  </script>
+</body>
+
+</html>

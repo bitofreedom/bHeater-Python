@@ -1,0 +1,18 @@
+{
+  "model": {
+    "id": "am1-s9",
+    "name": "AntMiner S9 Miner Control Board"
+  },
+  "system": {
+    "hostname": "miner-7ecb4d",
+    "log_size": 1024,
+    "log_file": "\/var\/log\/syslog",
+    "cronloglevel": "9"
+  },
+  "network": {
+    "lan": {
+      "ifname": "eth0",
+      "protocol": "dhcp"
+    }
+  }
+}

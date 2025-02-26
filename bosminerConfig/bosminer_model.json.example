@@ -1,0 +1,24 @@
+{
+  "model": "Antminer S9",
+  "default_voltage": 8800,
+  "default_frequency": 650000000,
+  "default_power": 1420,
+  "perf_variant_ths": 14.0,
+  "hashboards": [
+    {
+      "physical_address": 6,
+      "hashrate_ths": 4.0,
+      "note": "Values not detected from EEPROM"
+    },
+    {
+      "physical_address": 7,
+      "hashrate_ths": 4.0,
+      "note": "Values not detected from EEPROM"
+    },
+    {
+      "physical_address": 8,
+      "hashrate_ths": 4.0,
+      "note": "Values not detected from EEPROM"
+    }
+  ]
+}

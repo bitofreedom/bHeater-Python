@@ -1,0 +1,125 @@
+# BOSminer configuration file
+
+# Mandatory fields for specification of configuration format 'version' and
+# compatible hardware 'model'
+[format]
+version = '1.0'
+model = 'Antminer S9'
+generator = 'template'
+
+# Optional configuration for overriding all hash-chains default settings.
+# These settings can be overridden for each hash-chain with an option:
+# [hash_chain.idx] where 'idx' represents numerical index of the hash-chain.
+[hash_chain_global]
+# Enable or disable AsicBoost support (default=true)
+#asic_boost = true
+# Set default chip frequency in MHz for all hash-chains (default=650.0)
+#frequency = 650.0
+# Set default voltage in V for all hash-chains (default=8.8)
+#voltage = 8.8
+
+# Override global settings for hash-chain '6'
+[hash_chain.6]
+# You can disable each chain individually (by default all chains are enabled)
+#enabled = true
+# Override global chip frequency in MHz for hash-chain '6'
+# (default='hash_chain_global.frequency')
+#frequency = 650.0
+# Override global voltage in V for hash-chain '6'
+# (default='hash_chain_global.voltage')
+#voltage = 8.8
+
+# Override global settings for hash-chain '7'
+[hash_chain.7]
+# You can disable each chain individually (by default all chains are enabled)
+#enabled = true
+# Override global chip frequency in MHz for hash-chain '7'
+# (default='hash_chain_global.frequency')
+#frequency = 650.0
+# Override global voltage in V for hash-chain '7'
+# (default='hash_chain_global.voltage')
+#voltage = 8.8
+
+# Override global settings for hash-chain '8'
+[hash_chain.8]
+# You can disable each chain individually (by default all chains are enabled)
+#enabled = true
+# Override global chip frequency in MHz for hash-chain '8'
+# (default='hash_chain_global.frequency')
+#frequency = 650.0
+# Override global voltage in V for hash-chain '8'
+# (default='hash_chain_global.voltage')
+#voltage = 8.8
+
+# Optional configuration for overriding temperature control default settings
+[temp_control]
+# Set temperature control mode (default='auto')
+# * auto     - the control unit uses fans to keep the device temperature below
+#              the target temperature
+# * manual   - the control unit monitors only hot and dangerous temperatures,
+#              but the fans are controlled by the user through 'fan_control'
+# * disabled - WARNING: this may damage the device because no control is done!
+#mode = 'auto'
+# Set target temperature in Celsius (default=89.0)
+# This option is ONLY used when 'temp_control.mode' is set to 'auto'!
+#target_temp = 89.0
+# Set hot temperature in Celsius (default=100.0)
+# When this temperature is reached, the fan speed is set to 100%.
+#hot_temp = 100.0
+# Set dangerous temperature in Celsius (default=110.0)
+# When this temperature is reached, the mining is turned off!
+# WARNING: setting this value too high can damage the device!
+#dangerous_temp = 110.0
+
+# Optional configuration for overriding fan control default settings.
+# To completely disable fan control, set 'speed' and 'min_fans' to 0.
+[fan_control]
+# Set fixed fan speed in % (default=70)
+# This option is NOT used when 'temp_control.mode' is set to 'auto'!
+#speed = 70
+# Set minimum number of fans required for BOSminer to run (default=1)
+#min_fans = 1
+
+# Specify default list of pool groups. All pools in one group use fail-over
+# multipool strategy. Instead, load-balance strategy is used for all groups.
+# This strategy sends work to all the groups on a quota basis.
+[[group]]
+name = 'Default'
+
+# Specify default list of pools which are used for connection to remote servers
+# after successful run of BOSminer.
+# The order of the pools specifies a priority for failover algorithm.
+# This section can be repeated.
+#[[group.pool]]
+# Initial state of the pool after BOSminer initialization (default=true)
+#enabled = true
+# Mandatory option for server URL specified in format <HOSTNAME:PORT>
+#url = "stratum2+tcp://v2.stratum.slushpool.com:3336"
+# Mandatory option for username specified in format <USERNAME.WORKERNAME>
+#user = "!non-existent-user!"
+# Optional password settings
+#password = 'secret'
+
+# Optional configuration for overriding autotuning default settings
+#[autotuning]
+# Set true to start autotuner automatically
+#enabled = true
+# Set PSU power limit (in watts) for three hashboards and control board
+#psu_power_limit = 1420
+
+# Optional configuration to enable dynamic power scaling
+#[power_scaling]
+# Dynamic Power Scaling is not enabled by default
+#enabled = false
+# The `psu_power_limit` variable is lowered by `power_step` W each time miner
+# hits HOT temperature
+#power_step = 100
+# The `psu_power_limit` will never get below `min_psu_power_limit`
+#min_psu_power_limit = 800
+# If `psu_power_limit` is at `min_psu_power_limit` level and miner is still
+# HOT and `shutdown_enabled` is true, then miner is shut down for a period of
+# time. After that, miner is started but with the initial value of
+# `psu_power_limit`.
+#shutdown_enabled = true
+# `shutdown_duration` is in hours. The default time for shutdown is 3 hours.
+#shutdown_duration = 3.0
