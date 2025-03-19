@@ -175,8 +175,10 @@ def set_heater():
         local_file_path = f"bosminerConfig/bosminer-{miner_type}-medium.toml"
     elif action == "high":
         local_file_path = f"bosminerConfig/bosminer-{miner_type}-high.toml"
+    elif action == "extreme":
+        local_file_path = f"bosminerConfig/bosminer-{miner_type}-extreme.toml"
     else:
-        return jsonify({"error": "Invalid action. Valid actions are 'low', 'medium', 'high'"}), 400
+        return jsonify({"error": "Invalid action. Valid actions are 'low', 'medium', 'high', 'extreme'"}), 400
 
     # Set the remote file path
     remote_file_path = "/etc/bosminer.toml"
