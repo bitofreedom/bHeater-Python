@@ -10,7 +10,7 @@ hot_temp = 95.0
 dangerous_temp = 105.0
 
 [fan_control]
-speed = 75
+speed = 80
 min_fans = 2
 
 [[group]]
