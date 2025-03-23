@@ -2,7 +2,10 @@
 version = '2.0'
 model = 'Antminer S9'
 generator = 'BOSer (boser-openwrt 0.1.0-26ba61b9)'
-timestamp = 1738636141
+timestamp = 1742757219
+
+[temp_control]
+mode = 'manual'
 
 [fan_control]
 speed = 100
