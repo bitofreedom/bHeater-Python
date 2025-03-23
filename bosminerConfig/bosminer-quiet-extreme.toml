@@ -33,4 +33,3 @@ power_target = 1120
 
 [performance_scaling]
 enabled = true
-power_step = 100
