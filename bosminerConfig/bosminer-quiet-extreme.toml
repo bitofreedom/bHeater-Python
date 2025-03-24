@@ -29,7 +29,8 @@ password = 'x'
 
 [autotuning]
 enabled = true
-power_target = 1120
+power_target = 1100
 
 [performance_scaling]
 enabled = true
+power_step = 100
