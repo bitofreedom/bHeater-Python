@@ -188,9 +188,7 @@ def set_heater():
         transfer_file_to_remote_host(
             local_file_path=local_file_path,
             remote_file_path=remote_file_path,
-            # hostname=selected_heater["ipAddress"],
-            hostname=f"{selected_heater["hostName"]}.local",
-            minerId=selected_heater["hostName"]
+            hostname=selected_heater["hostname"]
         )
         return jsonify({"message": f"Heater '{heater_name}' configuration updated to '{action}' mode for type '{miner_type}'"}), 200
     except Exception as e:

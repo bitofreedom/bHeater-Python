@@ -1,7 +1,7 @@
 [
   {
     "heaterName": "hvac-front-1",
-    "hostName": "s9hvac1f",
+    "hostname": "s9hvac1f",
     "type": "standard",
     "location": "Basement",
     "ipAddress": "192.168.24.201",
@@ -9,7 +9,7 @@
   },
   {
     "heaterName": "hvac-front-2",
-    "hostName": "s9hvac2f",
+    "hostname": "s9hvac2f",
     "type": "standard",
     "location": "Basement",
     "ipAddress": "192.168.24.202",
@@ -17,7 +17,7 @@
   },
   {
     "heaterName": "hvac-back-1",
-    "hostName": "s9hvac1r",
+    "hostname": "s9hvac1r",
     "type": "standard",
     "location": "Basement",
     "ipAddress": "192.168.24.203",
@@ -25,7 +25,7 @@
   },
   {
     "heaterName": "hvac-back-2",
-    "hostName": "s9hvac2r",
+    "hostname": "s9hvac2r",
     "type": "standard",
     "location": "Basement",
     "ipAddress": "192.168.24.204",
@@ -33,7 +33,7 @@
   },
   {
     "heaterName": "room-aiden",
-    "hostName": "s9heater1q",
+    "hostname": "s9heater1q",
     "type": "quiet",
     "location": "Aiden's Bedroom",
     "ipAddress": "192.168.24.205",
@@ -41,7 +41,7 @@
   },
   {
     "heaterName": "room-madison",
-    "hostName": "s9heater2q",
+    "hostname": "s9heater2q",
     "type": "quiet",
     "location": "Madison's Bedroom",
     "ipAddress": "192.168.24.206",
@@ -49,7 +49,7 @@
   },
   {
     "heaterName": "room-lr",
-    "hostName": "s9heater3q",
+    "hostname": "s9heater3q",
     "type": "quiet",
     "location": "Living Room",
     "ipAddress": "192.168.24.207",
@@ -57,7 +57,7 @@
   },
   {
     "heaterName": "room-mbr",
-    "hostName": "s9heater4q",
+    "hostname": "s9heater4q",
     "type": "quiet",
     "location": "Master Bedroom",
     "ipAddress": "192.168.24.22",
@@ -65,7 +65,7 @@
   },
   {
     "heaterName": "room-basement1",
-    "hostName": "s9cooler1",
+    "hostname": "s9cooler1",
     "type": "standard",
     "location": "Basement",
     "ipAddress": "192.168.24.211",
@@ -73,7 +73,7 @@
   },
   {
     "heaterName": "room-basement2",
-    "hostName": "s9cooler2",
+    "hostname": "s9cooler2",
     "type": "standard",
     "location": "Basement",
     "ipAddress": "192.168.24.212",
