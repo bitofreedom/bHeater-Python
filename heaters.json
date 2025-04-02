@@ -60,7 +60,7 @@
     "hostname": "s9heater4q",
     "type": "quiet",
     "location": "Master Bedroom",
-    "ipAddress": "192.168.24.22",
+    "ipAddress": "192.168.24.208",
     "limitPower": false
   },
   {
