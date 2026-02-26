@@ -5,11 +5,11 @@ generator = 'BOSer (boser-openwrt 0.1.0-26ba61b9)'
 
 [temp_control]
 mode = 'manual'
-hot_temp = 100.0
-dangerous_temp = 105.0
+hot_temp = 92.0
+dangerous_temp = 98.0
 
 [fan_control]
-speed = 80
+speed = 85
 min_fans = 2
 
 [[group]]
@@ -17,14 +17,20 @@ name = 'Default'
 
 [[group.pool]]
 enabled = true
-url = 'stratum2+tcp://v2.stratum.braiins.com/u95GEReVMjK6k5YqiSFNqqTnKU4ypU2Wm8awa6tmbmDmk1bWt'
+url = 'stratum+tcp://192.168.1.21:23334'
 user = 'bitofreedom.{hostname}'
 password = 'x'
 
 [[group.pool]]
 enabled = true
-url = 'stratum+tcp://sha256asicboost.auto.nicehash.com:9200'
-user = '3DCT5e1xtDWhYPicATxgk5a5FRF6GhZDfH.{hostname}'
+url = 'stratum+tcp://mine.ocean.xyz:3334'
+user = 'bc1qg33e2dmkxx0knsxppp94nsqwxzhr6097hjs2k6'
+password = 'x'
+
+[[group.pool]]
+enabled = true
+url = 'stratum2+tcp://v2.stratum.braiins.com/u95GEReVMjK6k5YqiSFNqqTnKU4ypU2Wm8awa6tmbmDmk1bWt'
+user = 'bitofreedom.{hostname}'
 password = 'x'
 
 [autotuning]

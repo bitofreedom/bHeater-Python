@@ -4,7 +4,7 @@
     "hostname": "s9hvac1f",
     "type": "standard",
     "location": "Basement",
-    "ipAddress": "192.168.24.201",
+    "ipAddress": "192.168.1.210",
     "limitPower": false
   },
   {
@@ -12,7 +12,7 @@
     "hostname": "s9hvac2f",
     "type": "standard",
     "location": "Basement",
-    "ipAddress": "192.168.24.202",
+    "ipAddress": "192.168.1.211",
     "limitPower": false
   },
   {
@@ -20,7 +20,7 @@
     "hostname": "s9hvac1r",
     "type": "standard",
     "location": "Basement",
-    "ipAddress": "192.168.24.203",
+    "ipAddress": "192.168.1.212",
     "limitPower": false
   },
   {
@@ -28,55 +28,55 @@
     "hostname": "s9hvac2r",
     "type": "standard",
     "location": "Basement",
-    "ipAddress": "192.168.24.204",
+    "ipAddress": "192.168.1.213",
     "limitPower": false
   },
   {
-    "heaterName": "room-aiden",
-    "hostname": "s9heater1q",
+    "heaterName": "loft",
+    "hostname": "ellsworth-loft",
     "type": "quiet",
-    "location": "Aiden's Bedroom",
-    "ipAddress": "192.168.24.205",
-    "limitPower": true
+    "location": "Loft",
+    "ipAddress": "192.168.1.201",
+    "limitPower": false
   },
   {
-    "heaterName": "room-madison",
-    "hostname": "s9heater2q",
-    "type": "quiet",
-    "location": "Madison's Bedroom",
-    "ipAddress": "192.168.24.206",
-    "limitPower": true
-  },
-  {
-    "heaterName": "room-lr",
-    "hostname": "s9heater3q",
+    "heaterName": "livingroom",
+    "hostname": "ellsworth-livingroom",
     "type": "quiet",
     "location": "Living Room",
-    "ipAddress": "192.168.24.207",
+    "ipAddress": "192.168.1.202",
+    "limitPower": true
+  },
+  {
+    "heaterName": "office",
+    "hostname": "ellsworth-office",
+    "type": "quiet",
+    "location": "Office",
+    "ipAddress": "192.168.1.203",
+    "limitPower": true
+  },
+  {
+    "heaterName": "cooler1",
+    "hostname": "ellsworth-cooler1",
+    "type": "standard",
+    "location": "Basement",
+    "ipAddress": "192.168.1.204",
     "limitPower": false
   },
   {
-    "heaterName": "room-mbr",
-    "hostname": "s9heater4q",
+    "heaterName": "cooler2",
+    "hostname": "ellsworth-cooler2",
+    "type": "standard",
+    "location": "Basement",
+    "ipAddress": "192.168.1.205",
+    "limitPower": false
+  },
+  {
+    "heaterName": "mbr",
+    "hostname": "ellsworth-mbr",
     "type": "quiet",
     "location": "Master Bedroom",
-    "ipAddress": "192.168.24.208",
-    "limitPower": false
-  },
-  {
-    "heaterName": "room-basement1",
-    "hostname": "s9cooler1",
-    "type": "standard",
-    "location": "Basement",
-    "ipAddress": "192.168.24.211",
-    "limitPower": false
-  },
-  {
-    "heaterName": "room-basement2",
-    "hostname": "s9cooler2",
-    "type": "standard",
-    "location": "Basement",
-    "ipAddress": "192.168.24.212",
-    "limitPower": false
+    "ipAddress": "192.168.1.206",
+    "limitPower": true
   }
 ]

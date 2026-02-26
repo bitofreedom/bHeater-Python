@@ -1,0 +1,115 @@
+{
+  "timestamp": "2026-01-22T02:26:29.205327",
+  "results": [
+    {
+      "hostname": "s9hvac1f",
+      "ip_address": "192.168.1.210",
+      "hostname_status": "FAIL",
+      "ip_status": "FAIL",
+      "error": "Connection error: [Errno 8] nodename nor servname provided, or not known",
+      "auth_method": null,
+      "heater_name": "hvac-front-1",
+      "location": "Basement",
+      "type": "standard"
+    },
+    {
+      "hostname": "s9hvac2f",
+      "ip_address": "192.168.1.211",
+      "hostname_status": "FAIL",
+      "ip_status": "FAIL",
+      "error": "Connection error: [Errno 8] nodename nor servname provided, or not known",
+      "auth_method": null,
+      "heater_name": "hvac-front-2",
+      "location": "Basement",
+      "type": "standard"
+    },
+    {
+      "hostname": "s9hvac1r",
+      "ip_address": "192.168.1.212",
+      "hostname_status": "FAIL",
+      "ip_status": "FAIL",
+      "error": "Connection error: [Errno 8] nodename nor servname provided, or not known",
+      "auth_method": null,
+      "heater_name": "hvac-back-1",
+      "location": "Basement",
+      "type": "standard"
+    },
+    {
+      "hostname": "s9hvac2r",
+      "ip_address": "192.168.1.213",
+      "hostname_status": "FAIL",
+      "ip_status": "FAIL",
+      "error": "Connection error: [Errno 8] nodename nor servname provided, or not known",
+      "auth_method": null,
+      "heater_name": "hvac-back-2",
+      "location": "Basement",
+      "type": "standard"
+    },
+    {
+      "hostname": "ellsworth-loft",
+      "ip_address": "192.168.1.201",
+      "hostname_status": "SUCCESS",
+      "ip_status": "FAIL",
+      "error": null,
+      "auth_method": "SSH Key",
+      "heater_name": "loft",
+      "location": "Loft",
+      "type": "quiet"
+    },
+    {
+      "hostname": "ellsworth-livingroom",
+      "ip_address": "192.168.1.202",
+      "hostname_status": "SUCCESS",
+      "ip_status": "FAIL",
+      "error": null,
+      "auth_method": "SSH Key",
+      "heater_name": "livingroom",
+      "location": "Living Room",
+      "type": "quiet"
+    },
+    {
+      "hostname": "ellsworth-office",
+      "ip_address": "192.168.1.203",
+      "hostname_status": "SUCCESS",
+      "ip_status": "FAIL",
+      "error": null,
+      "auth_method": "SSH Key",
+      "heater_name": "office",
+      "location": "Office",
+      "type": "quiet"
+    },
+    {
+      "hostname": "ellsworth-cooler1",
+      "ip_address": "192.168.1.204",
+      "hostname_status": "SUCCESS",
+      "ip_status": "FAIL",
+      "error": null,
+      "auth_method": "SSH Key",
+      "heater_name": "cooler1",
+      "location": "Basement",
+      "type": "standard"
+    },
+    {
+      "hostname": "ellsworth-cooler2",
+      "ip_address": "192.168.1.205",
+      "hostname_status": "SUCCESS",
+      "ip_status": "FAIL",
+      "error": null,
+      "auth_method": "SSH Key",
+      "heater_name": "cooler2",
+      "location": "Basement",
+      "type": "standard"
+    },
+    {
+      "hostname": "ellsworth-mbr",
+      "ip_address": "192.168.1.206",
+      "hostname_status": "FAIL",
+      "ip_status": "FAIL",
+      "error": "Connection error: [Errno 8] nodename nor servname provided, or not known",
+      "auth_method": null,
+      "heater_name": "mbr",
+      "location": "Master Bedroom",
+      "type": "quiet"
+    }
+  ]
+}

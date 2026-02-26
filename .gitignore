@@ -1,2 +1,81 @@
-tmpFile/
+# Byte-compiled / optimized / DLL files
 __pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual Environments
+# Matches your 'venv' folder and other common names
+venv/
+env/
+.env
+.venv/
+env.bak/
+venv.bak/
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+eggs/
+parts/
+var/
+sdist/
+wheels/
+share/python-wheels/
+*.egg
+MANIFEST
+
+# PyInstaller
+*.spec
+*.manifest
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Mac OS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# --- Project Specific Data ---
+
+# Inputs: Ignore JSON data files, keep folder structure
+data/inputs/*
+!data/inputs/.gitkeep
+
+# Outputs: Ignore extracted/decrypted results, keep folder structure
+data/outputs/*
+!data/outputs/.gitkeep
+
+# Keys: SECURITY CRITICAL - Ignore all keys (.pem), keep folder structure
+keys/*
+!keys/.gitkeep
+
+# Temporary files
+tmp/
+tmpFile/
+
+# Log files
+*.log
+
